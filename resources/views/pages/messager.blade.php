@@ -114,13 +114,13 @@
         <div class="header-chat">
         <i class="icon fa fa-user-o" aria-hidden="true"></i>
         <p class="name">{{$user->name}}
-            <span id="status">Offline</span>
+            {{-- <span id="status">Offline</span> --}}
 
-        {{-- @if ($user->is_online == 1)
+        @if ($user->is_online == 1)
             <span id="status">Online</span>
         @else
             <span id="status">Offline</span>
-        @endif --}}
+        @endif
         </p>
         <i class="icon clickable fa fa-ellipsis-h right" aria-hidden="true"></i>
         </div>
@@ -196,12 +196,6 @@
     let status = document.getElementById('status');
 
     let read_message = document.querySelectorAll('.fa-check-double.unreaded');
-
-
-
-
-
-
 
     let usersOnline = [];
     const channel = Echo.join(`message.${roomId}`);
@@ -348,9 +342,5 @@
         typing.innerHTML = "";
 
     })
-
-
-
-
 </script>
 @endsection

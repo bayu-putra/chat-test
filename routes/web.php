@@ -20,6 +20,12 @@ Route::get('/', function () {
 
 Route::controller(SendMessageController::class)->group(function () {
     Route::get('messanger/{id}', 'show_room');
+
+    //send message 
+    Route::post("/send",'sendMessage');
+
+    //read_messages 
+    Route::post("/read_all",'read_all_messages');
 });
 
 Auth::routes();
